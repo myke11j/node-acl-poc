@@ -1,0 +1,32 @@
+{
+  "name": "acl-poc",
+  "version": "1.0.0",
+  "description": "POC for nodejs ACL implemntation Edit",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/myke11j/node-acl-poc.git"
+  },
+  "keywords": [
+    "nodejs",
+    "javascript",
+    "acl",
+    "acl-library",
+    "poc"
+  ],
+  "author": "Mukul <@mukul1904>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/myke11j/node-acl-poc/issues"
+  },
+  "homepage": "https://github.com/myke11j/node-acl-poc#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "easy-rbac": "^3.1.0",
+    "express": "^4.16.2",
+    "mongoose": "^5.0.1"
+  }
+}
