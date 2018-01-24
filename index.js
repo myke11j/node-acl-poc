@@ -46,26 +46,14 @@ app.listen(port, () => console.log(`Server listening to ${port}`))
 ACL
 // ==================================================================================
 const opts= {
-    user: { // Role name
-      can: [ // list of allowed operations
-        'voucher', 
-        'userProfile:add', 
-        { 
-            name: 'userProfile:save',
-            when: async (params) => params.userId === params.ownerId
-        },
-        'users:get',
-        {
-          name: 'users:*',
-          when: async (params) => params.id === params.userId
-        }
-      ]
+    support: { // Role name
+      can: ['salesc2c']
     },
-    manager: {
-      can: ['user:save', 'user:delete', 'userProfile:*']
+    sales: {
+      can: ['b2b', 'salesc2c']
     },
     admin: {
-      can: ['rule the server']
+      can: ['*']
     }
 }
 const rbac = new RBAC(opts);
@@ -74,7 +62,7 @@ router.route('/users')
 
     // get a user (accessed at POST http://localhost:8080/api/users)
     .get(function(req, res) {
-        rbac.can('user', 'users:get')
+        rbac.can('sales', 'b2b')
         .then(result => {
             if (result) {
                 User.find({}, function(err, users) {
